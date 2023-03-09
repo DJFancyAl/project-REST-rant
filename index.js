@@ -1,7 +1,11 @@
 require('dotenv').config()
 
+
 const express = require('express');
 const app = express();
+
+// Import Controllers
+app.use('/places', require('./controllers/places'))
 
 // Home Page
 app.get('/', (req, res) => {

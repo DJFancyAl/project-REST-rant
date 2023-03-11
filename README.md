@@ -3,6 +3,7 @@
 REST-Rant is an app where users can review restaurants.
 
 <img align="right" width="350" src="https://user-images.githubusercontent.com/80846699/224506024-b62db753-3041-49b6-9317-73d8f10051a1.png">
+
 ## Description
 This app seeks to create a fun and interactive user experience where the user can share their opinion of restaurants and explore the "Rants" of other users. For this app to work properly we will need to use all of the "CRUD" methods to move data between the front and back ends. Additionally we aim to make the user interface beautiful an easy to use.
 

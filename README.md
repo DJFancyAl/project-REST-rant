@@ -2,7 +2,9 @@
 
 REST-Rant is an app where users can review restaurants.
 
-## Goals/Objectives
+## Description
+
+This app seeks to create a fun and interactive user experience where the user can share their opinion of restaurants and explore the "Rants" of other users. For this app to work properly we will need to use all of the "CRUD" methods to move data between the front and back ends. Additionally we aim to make the user interface beautiful an easy to use.
 
 ## Colors
 

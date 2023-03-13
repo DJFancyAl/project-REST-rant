@@ -16,6 +16,7 @@ function index(data) {
         <Def>
             <main>
                 <h1>Places Index Page</h1>
+                <a href='/places/new'><button>Create New Place</button></a>
                 {placesFormatted}
             </main>
         </Def>

@@ -84,10 +84,10 @@ function newPlace(){
                     <input type="checkbox" name="cuisines" value="Steakhouse" />Steakhouse
                     <input type="checkbox" name="cuisines" value="Vegetarian/Vegan" />Vegetarian/Vegan
                     <input type="checkbox" name="cuisines" value="Other" />Other
-                    <input type="submit" value="Submit now" />
                 </fieldset>  
                 <label htmlFor="image">Image</label>
                 <input type="text" placeholder='Image url...' name='image' />
+                <input type="submit" value="Submit now" />
             </form>
         </Def>
     )

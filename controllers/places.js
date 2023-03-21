@@ -64,7 +64,6 @@ router.delete('/:id/rant/:id', (req, res) => {
     res.send("Delete a rant (comment) about a particular place")
 })
 
-
 // Wildcard Route
 router.get('*', (req, res) => {
     res.status(404).render('error404')

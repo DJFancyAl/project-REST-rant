@@ -4,10 +4,11 @@ const Def = require('../default.jsx')
 function index(data) {
     let placesFormatted = data.places.map((place, index) => {
         return (
-            <div key={index}>
+            <div key={index} className="col-sm-6 p-5">
                 <h2>{place.name}</h2>
-                <img src={place.pic} alt={place.name} />
-                <p><a href={"/places/" + index}>Read more...</a></p>
+                <p>{place.cuisines}</p>
+                <img className='img-fluid text-center rounded' src={place.pic} alt={place.name} />
+                <p>Located in {place.city}, {place.state}</p>
             </div>
         )
     })
@@ -15,9 +16,11 @@ function index(data) {
     return (
         <Def>
             <main>
-                <h1>Places Index Page</h1>
+                <h1>Places to Rant or Rave About</h1>
                 <a href='/places/new'><button>Create New Place</button></a>
-                {placesFormatted}
+                <div className='row'>
+                    {placesFormatted}
+                </div>
             </main>
         </Def>
     )

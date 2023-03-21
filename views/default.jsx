@@ -17,6 +17,7 @@ function Def (html) {
             <Heading />
             {html.children}
             <Footer />
+            <script src="https://kit.fontawesome.com/abfb523ce8.js" crossOrigin="anonymous"></script>
           </body>
       </html>
   )

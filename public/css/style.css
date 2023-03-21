@@ -10,13 +10,15 @@ html, body {
     height: 100%;
     margin: 0;
 }
+
+
 header {
     height: 60px;
 }
 
 main {
     min-height: calc(100% - 60px);
-    margin-bottom: -80px;
+    margin-bottom: -60px;
 }
 
 main::after {
@@ -25,7 +27,7 @@ main::after {
 }
 
 footer, main::after{
-    height: 80px;
+    height: 60px;
 }
 
 .navbar-brand {
@@ -79,7 +81,19 @@ footer, main::after{
 
 footer {
     background-color: var(--black);
-    color: var(--white);
+    color: var(--yellow);
 }
 
+footer a {
+    color: var(--yellow);
+    font-weight: bold;
+    text-decoration: none;
+}
 
+footer a:hover {
+    color: var(--red);
+}
+
+footer span {
+    padding: 0 1rem;
+}

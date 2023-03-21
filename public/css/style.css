@@ -1,4 +1,62 @@
-h1 {
-    text-align: center;
-    color: cornflowerblue;
+:root {
+    --red: #FF1D46;
+    --yellow: #FFC815;
+    --black: #202020;
+    --white: #dadada;
+  }
+
+body {
+    background-color: var(--white);
 }
+
+.navbar-brand {
+    color: var(--red);
+    font-weight: bold;
+}
+
+.banner {
+    width: 100%;
+    background-color: var(--red);
+    color: var(--yellow);
+    font-size: 4rem;
+    font-family: 'Abril Fatface', cursive;
+}
+
+.banner:hover {
+    color: var(--red);
+    background-color: var(--yellow);
+}
+
+.home-grid {
+    background-color: var(--yellow);
+}
+
+.home-grid img {
+    width: 100%;
+    border: 2px solid var(--yellow);
+    object-fit: contain;
+}
+
+.home-grid .position-relative:hover {
+    opacity: 0.8;
+}
+
+.banner-label {
+    color: var(--yellow);
+    font-family: 'Abril Fatface', cursive;
+    background-color: var(--red);
+    bottom: 5%;
+    left: 5%;
+}
+
+.banner-attribute {
+    color: var(--black);
+    font-size: 0.6rem;
+    padding: 3px;
+    background-color: var(--white);
+    top: 3%;
+    right: 3%;
+}
+
+
+

@@ -1,19 +1,7 @@
 const router = require('express').Router()
+const places = require('../models/places')
 
-// Placeholders
-let places = [{
-    name: 'H-Thai-ML',
-    city: 'Seattle',
-    state: 'WA',
-    cuisines: 'Thai, Pan-Asian',
-    pic: '/images/thai_chef.jpg'
-  }, {
-    name: 'Coding Cat Cafe',
-    city: 'Phoenix',
-    state: 'AZ',
-    cuisines: 'Coffee, Bakery',
-    pic: '/images/cyber_cafe.jpg'
-  }]
+
 
 // Places index page
 router.get('/', (req, res) => {      
@@ -22,8 +10,20 @@ router.get('/', (req, res) => {
 
 // Create new place
 router.post('/', (req, res) => { 
-    console.log(req.body)     
-    res.send("New place created!")
+    if(!req.body.pic){
+        req.body.pic = "http://placekitten.com/400/400"
+    }
+    if(!req.body.city){
+        req.body.city = "Anytown"
+    }
+    if(!req.body.state){
+        req.body.state = "USA"
+    }
+    if(!req.body.cuisines){
+        req.body.cuisines = ["Unknown"]
+    }
+    places.push(req.body)
+    res.redirect('/places')
 })
 
 // Form page for creating a new place

@@ -21,7 +21,8 @@ router.get('/', (req, res) => {
 })
 
 // Create new place
-router.post('/', (req, res) => {      
+router.post('/', (req, res) => { 
+    console.log(req.body)     
     res.send("New place created!")
 })
 

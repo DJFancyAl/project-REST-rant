@@ -3,10 +3,15 @@ const Def = require('../default.jsx')
 
 function index(data) {
     let placesFormatted = data.places.map((place, index) => {
+        const cuisines = place.cuisines
+
         return (
             <div key={index} className="col-sm-6 p-5">
                 <h2>{place.name}</h2>
-                <p>{place.cuisines}</p>
+                <p>{cuisines.map((cuisine) => {
+                    return cuisine + " * "
+                })}
+                </p>
                 <img className='img-fluid text-center rounded' src={place.pic} alt={place.name} />
                 <p>Located in {place.city}, {place.state}</p>
             </div>

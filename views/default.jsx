@@ -1,5 +1,6 @@
 const React = require('react')
 const Heading = require('./heading')
+const Footer = require('./footer')
 
 function Def (html) {
   return (
@@ -15,6 +16,7 @@ function Def (html) {
           <body>
             <Heading />
             {html.children}
+            <Footer />
           </body>
       </html>
   )

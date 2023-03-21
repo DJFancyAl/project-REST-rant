@@ -5,8 +5,27 @@
     --white: #dadada;
   }
 
-body {
+html, body {
     background-color: var(--white);
+    height: 100%;
+    margin: 0;
+}
+header {
+    height: 60px;
+}
+
+main {
+    min-height: calc(100% - 60px);
+    margin-bottom: -80px;
+}
+
+main::after {
+    content: "";
+    display: block;
+}
+
+footer, main::after{
+    height: 80px;
 }
 
 .navbar-brand {
@@ -58,5 +77,9 @@ body {
     right: 3%;
 }
 
+footer {
+    background-color: var(--black);
+    color: var(--white);
+}
 
 

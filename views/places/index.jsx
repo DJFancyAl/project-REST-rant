@@ -12,7 +12,7 @@ function index(data) {
                     return cuisine + " * "
                 })}
                 </p>
-                <img className='img-fluid text-center rounded' src={place.pic} alt={place.name} />
+                <img className='img-fluid text-center' src={place.pic} alt={place.name} />
                 <p>Located in {place.city}, {place.state}</p>
             </div>
         )
@@ -22,9 +22,11 @@ function index(data) {
         <Def>
             <main>
                 <h1>Places to Rant or Rave About</h1>
-                <a href='/places/new'><button>Create New Place</button></a>
-                <div className='row'>
-                    {placesFormatted}
+                <div className='container'>
+                    <a href='/places/new'><button>Create New Place</button></a>
+                    <div className='row'>
+                        {placesFormatted}
+                    </div>
                 </div>
             </main>
         </Def>

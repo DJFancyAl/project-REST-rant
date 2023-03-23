@@ -3,6 +3,7 @@
     --yellow: #FFC815;
     --black: #202020;
     --white: #dadada;
+    --rantFont: 'Abril Fatface', cursive;
   }
 
 html, body {
@@ -26,6 +27,15 @@ main::after {
     display: block;
 }
 
+h1 {
+    font-family: var(--rantFont);
+    width: 100%;
+    background-color: var(--red);
+    color: var(--yellow);
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+}
+
 footer, main::after{
     height: 60px;
 }
@@ -40,7 +50,7 @@ footer, main::after{
     background-color: var(--red);
     color: var(--yellow);
     font-size: 4rem;
-    font-family: 'Abril Fatface', cursive;
+    font-family: var(--rantFont)
 }
 
 .banner:hover {

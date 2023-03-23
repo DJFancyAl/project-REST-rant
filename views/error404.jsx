@@ -1,10 +1,10 @@
 const React = require('react')
-const Def = require('./default.jsx')
+const Def = require('./layouts/default.jsx')
 
 function error404 () {
     return (
       <Def>
-          <main>
+          <main className="container">
               <h1>404: PAGE NOT FOUND</h1>
               <p>Oops, sorry, we can't find this page!</p>
               <div>

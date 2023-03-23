@@ -1,6 +1,6 @@
 const React = require('react')
-const Heading = require('./heading')
-const Footer = require('./footer')
+const Heading = require('../heading')
+const Footer = require('../footer')
 
 function Def (html) {
   return (

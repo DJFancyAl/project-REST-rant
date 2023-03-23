@@ -1,8 +1,6 @@
 const router = require('express').Router()
 const places = require('../models/places')
 
-
-
 // Places index page
 router.get('/', (req, res) => {      
     res.render('places/index', { places })

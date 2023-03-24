@@ -60,6 +60,7 @@ footer, main::after{
 
 .home-grid {
     background-color: var(--yellow);
+    padding: 0px;
 }
 
 .home-grid img {

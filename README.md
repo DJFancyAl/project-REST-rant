@@ -8,10 +8,10 @@ This app seeks to create a fun and interactive user experience where the user ca
 
 ## Colors
 
-- #381566
-- #893EFF
-- #A5D825
-- #58AF33
+- #FF1D46
+- #FFC815
+- #202020
+- #dadada
 
 ## Routes
 

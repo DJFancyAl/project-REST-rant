@@ -12,7 +12,7 @@ function index(data) {
                     return cuisine + " * "
                 })}
                 </p>
-                <img className='img-fluid text-center' src={place.pic} alt={place.name} />
+                <img className='img-fluid text-center w-100' src={place.pic} alt={place.name} />
                 <p>Located in {place.city}, {place.state}</p>
             </div>
         )

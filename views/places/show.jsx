@@ -20,7 +20,11 @@ function show({place, id}){
                             return cuisine + " * "
                         })}
                         </p>
-                        <a href={"/places/" + id + "/edit"}><button>Edit Place</button></a>
+                        <a href={`/places/${id}/edit`}><button className='btn btn-warning inline-block'>Edit Place</button></a>  
+
+                        <form className='inline-block' method="POST" action={`/places/${id}?_method=DELETE`}>
+                            <button type="submit" className="btn btn-danger">Delete</button>
+                        </form>
                     </div>
                 </div>
             </main>

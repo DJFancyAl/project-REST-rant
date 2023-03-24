@@ -35,7 +35,7 @@ router.get('/:id', (req, res) => {
     if (isNaN(id)) {
         res.render('error404')
     } else {
-        res.render('places/show', {place: places[id], id: id})
+        res.render('places/show', {place: places[id], id})
     }
 })
 
@@ -64,9 +64,20 @@ router.get('/:id/edit', (req, res) => {
 })
 
 // Delete a particular place
-router.delete('/:id', (req, res) => {      
-    res.send("Delete a particular place.")
+router.delete('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+      res.render('error404')
+    }
+    else if (!places[id]) {
+      res.render('error404')
+    }
+    else {
+      places.splice(id, 1)
+      res.redirect('/places')
+    }
 })
+  
 
 // Create a rant (comment) about a particular place
 router.post('/:id/rant', (req, res) => {      

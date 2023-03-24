@@ -7,7 +7,7 @@ function index(data) {
 
         return (
             <div key={index} className="col-sm-6 p-5">
-                <h2>{place.name}</h2>
+                <a href={`/places/${index}`}><h2>{place.name}</h2></a>
                 <p>{cuisines.map((cuisine) => {
                     return cuisine + " * "
                 })}

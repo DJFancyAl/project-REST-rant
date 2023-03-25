@@ -16,16 +16,24 @@ function show({place, id}){
                         <h2 className='mt-5'>Description</h2>
                         <h5>Located in {place.city}, {place.state}</h5>
 
-                        <p>{place.cuisines.map((cuisine) => {
-                            return cuisine + " * "
+                        <p> 
+                        {place.cuisines.map((cuisine, index) => {
+                            return(
+                                <span key={index} className="badge rounded-pill p-2 mx-1 pill">{cuisine}</span> 
+                            )
                         })}
                         </p>
-                        <a href={`/places/${id}/edit`}><button className='btn btn-warning inline-block'>Edit Place</button></a>  
 
-                        <form className='inline-block' method="POST" action={`/places/${id}?_method=DELETE`}>
+                        <form method="POST" action={`/places/${id}?_method=DELETE`}>
                             <button type="submit" className="btn btn-danger">Delete</button>
                         </form>
+
+                        <a href={`/places/${id}/edit`}><button className='btn btn-warning inline-block mt-3'>Edit Place</button></a>
                     </div>
+                </div>
+                <div className='col-6 m-auto mt-5 text-center'>
+                    <h2>Comments</h2>
+                    <p>There's not any comments yet...</p>
                 </div>
             </main>
         </Def>

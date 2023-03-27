@@ -115,6 +115,14 @@ footer, main::after{
     transform: translate(0, -50%);
 }
 
+.btn-danger {
+    background-color: var(--red);
+}
+
+.btn-warning {
+    color: var(--red);
+}
+
 footer {
     background-color: var(--black);
     color: var(--yellow);

@@ -1,14 +1,14 @@
 const React = require('react')
 const Def = require('../layouts/default')
 
-function edit_form( {place} ){
+function edit_form( {place, id} ){
 
     return (
         <Def>
             <main className="container">
                 <h1>Edit Place</h1>
                 <div className='col-6 m-auto'>
-                    <form method='POST' action={`/places/${place.id}?_method=PUT`}>
+                    <form method='POST' action={`/places/${id}?_method=PUT`}>
                         <label className='form-label' htmlFor="name">Name of Place</label>
                         <input className='form-control mb-3' type="text" placeholder='Your place...' name='name' value={place.name} />
                         <label className='form-label' htmlFor="city">City</label>
@@ -89,7 +89,7 @@ function edit_form( {place} ){
                             <input type="checkbox" name="cuisines" value="Other" />Other
                         </fieldset>  
                         <label className='form-label' htmlFor="image">Image</label>
-                        <input className='form-control mb-3' type="text" placeholder='Image url...' name='image' value={place.pic} />
+                        <input className='form-control mb-3' type="text" placeholder='Image url...' name='pic' value={place.pic} />
                         <input className='btn btn-primary' type="submit" value="Submit now" />
                     </form>
                 </div>

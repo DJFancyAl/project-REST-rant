@@ -1,14 +1,14 @@
 const React = require('react')
 const Def = require('../layouts/default')
 
-function editPlace( {place, id} ){
-    
+function edit_form( {place} ){
+
     return (
         <Def>
             <main className="container">
                 <h1>Edit Place</h1>
                 <div className='col-6 m-auto'>
-                    <form method='POST'>
+                    <form method='POST' action={`/places/${place.id}?_method=PUT`}>
                         <label className='form-label' htmlFor="name">Name of Place</label>
                         <input className='form-control mb-3' type="text" placeholder='Your place...' name='name' value={place.name} />
                         <label className='form-label' htmlFor="city">City</label>
@@ -98,4 +98,4 @@ function editPlace( {place, id} ){
     )
 }
 
-module.exports = editPlace
+module.exports = edit_form

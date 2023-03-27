@@ -123,6 +123,11 @@ footer, main::after{
     color: var(--red);
 }
 
+input[type=checkbox]:checked{
+    background-color: var(--red);
+    border-color: var(--red);
+}
+
 footer {
     background-color: var(--black);
     color: var(--yellow);

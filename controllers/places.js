@@ -24,10 +24,12 @@ router.post('/', (req, res) => {
     res.redirect('/places')
 })
 
+
 // Form page for creating a new place
 router.get('/new', (req, res) => {
     res.render('places/new')
 })
+
 
 // Details about a particular place
 router.get('/:id', (req, res) => {

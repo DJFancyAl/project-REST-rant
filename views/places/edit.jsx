@@ -2,6 +2,7 @@ const React = require('react')
 const Def = require('../layouts/default')
 
 function edit_form( {place, id} ){
+    let cuisinesChecked = place.cuisines
 
     return (
         <Def>
@@ -82,79 +83,113 @@ function edit_form( {place, id} ){
                         <fieldset className='mb-3'>
                             <div className="row m-auto">
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check1" name="cuisines" value="American" />
+                                    { cuisinesChecked.includes("American") ?
+                                    <input type="checkbox" className="form-check-input" id="check1" name="cuisines" value="American" checked /> :
+                                    <input type="checkbox" className="form-check-input" id="check1" name="cuisines" value="American" /> }
                                     <label className="form-check-label" htmlFor="check1">American</label>
                                 </div>
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check2" name="cuisines" value="Chinese" />
+                                    { cuisinesChecked.includes("Chinese") ?
+                                    <input type="checkbox" className="form-check-input" id="check2" name="cuisines" value="Chinese" checked /> :
+                                    <input type="checkbox" className="form-check-input" id="check2" name="cuisines" value="Chinese" /> }
                                     <label className="form-check-label" htmlFor="check2">Chinese</label>
                                 </div>
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check3" name="cuisines" value="Fast-Food" />
+                                    { cuisinesChecked.includes("Fast-Food") ?
+                                    <input type="checkbox" className="form-check-input" id="check3" name="cuisines" value="Fast-Food" checked /> :
+                                    <input type="checkbox" className="form-check-input" id="check3" name="cuisines" value="Fast-Food" /> }
                                     <label className="form-check-label" htmlFor="check3">Fast-Food</label>
                                 </div>
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check4" name="cuisines" value="Italian" />
+                                    { cuisinesChecked.includes("Italian") ?
+                                    <input type="checkbox" className="form-check-input" id="check4" name="cuisines" value="Italian" checked /> :
+                                    <input type="checkbox" className="form-check-input" id="check4" name="cuisines" value="Italian" />}
                                     <label className="form-check-label" htmlFor="check4">Italian</label>
                                 </div>
                             </div>
                             <div className="row m-auto">
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check5" name="cuisines" value="Sushi" />
+                                    { cuisinesChecked.includes("Sushi") ?
+                                    <input type="checkbox" className="form-check-input" id="check5" name="cuisines" value="Sushi" checked /> :
+                                    <input type="checkbox" className="form-check-input" id="check5" name="cuisines" value="Sushi" />}
                                     <label className="form-check-label" htmlFor="check5">Sushi</label>
                                 </div>
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check6" name="cuisines" value="Thai" />
+                                    { cuisinesChecked.includes("Thai") ?
+                                    <input type="checkbox" className="form-check-input" id="check6" name="cuisines" value="Thai" checked /> :
+                                    <input type="checkbox" className="form-check-input" id="check6" name="cuisines" value="Thai" />}
                                     <label className="form-check-label" htmlFor="check6">Thai</label>
                                 </div>
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check7" name="cuisines" value="Mexican" />
+                                    { cuisinesChecked.includes("Mexican") ?
+                                    <input type="checkbox" className="form-check-input" id="check7" name="cuisines" value="Mexican" checked /> : 
+                                    <input type="checkbox" className="form-check-input" id="check7" name="cuisines" value="Mexican" />}
                                     <label className="form-check-label" htmlFor="check7">Mexican</label>
                                 </div>
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check8" name="cuisines" value="German" />
+                                    { cuisinesChecked.includes("German") ?
+                                    <input type="checkbox" className="form-check-input" id="check8" name="cuisines" value="German" checked /> :
+                                    <input type="checkbox" className="form-check-input" id="check8" name="cuisines" value="German" />}
                                     <label className="form-check-label" htmlFor="check8">German</label>
                                 </div>
                             </div>
                             <div className="row m-auto">
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check9" name="cuisines" value="Greek" />
+                                    { cuisinesChecked.includes("Greek") ?
+                                    <input type="checkbox" className="form-check-input" id="check9" name="cuisines" value="Greek" checked /> :
+                                    <input type="checkbox" className="form-check-input" id="check9" name="cuisines" value="Greek" />}
                                     <label className="form-check-label" htmlFor="check9">Greek</label>
                                 </div>
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check10" name="cuisines" value="Comfort" />
+                                    { cuisinesChecked.includes("Comfort") ?
+                                    <input type="checkbox" className="form-check-input" id="check10" name="cuisines" value="Comfort" checked /> :
+                                    <input type="checkbox" className="form-check-input" id="check10" name="cuisines" value="Comfort" />}
                                     <label className="form-check-label" htmlFor="check10">Comfort</label>
                                 </div>
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check11" name="cuisines" value="Indian" />
+                                    { cuisinesChecked.includes("Indian") ?
+                                    <input type="checkbox" className="form-check-input" id="check11" name="cuisines" value="Indian" checked /> :
+                                    <input type="checkbox" className="form-check-input" id="check11" name="cuisines" value="Indian" />}
                                     <label className="form-check-label" htmlFor="check11">Indian</label>
                                 </div>
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check12" name="cuisines" value="French" />
+                                    { cuisinesChecked.includes("French") ?
+                                    <input type="checkbox" className="form-check-input" id="check12" name="cuisines" value="French" checked />:
+                                    <input type="checkbox" className="form-check-input" id="check12" name="cuisines" value="French" />}
                                     <label className="form-check-label" htmlFor="check12">French</label>
                                 </div>
                             </div>
                             <div className="row m-auto">
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check13" name="cuisines" value="Pizza" />
+                                    { cuisinesChecked.includes("Pizza") ?
+                                    <input type="checkbox" className="form-check-input" id="check13" name="cuisines" value="Pizza" checked />:
+                                    <input type="checkbox" className="form-check-input" id="check13" name="cuisines" value="Pizza" />}
                                     <label className="form-check-label" htmlFor="check13">Pizza</label>
                                 </div>
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check14" name="cuisines" value="Mediterranean" />
+                                    { cuisinesChecked.includes("Mediterranean") ?
+                                    <input type="checkbox" className="form-check-input" id="check14" name="cuisines" value="Mediterranean" checked />:
+                                    <input type="checkbox" className="form-check-input" id="check14" name="cuisines" value="Mediterranean" />}
                                     <label className="form-check-label" htmlFor="check14">Mediterranean</label>
                                 </div>
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check15" name="cuisines" value="Steakhouse" />
+                                    { cuisinesChecked.includes("Steakhouse") ?
+                                    <input type="checkbox" className="form-check-input" id="check15" name="cuisines" value="Steakhouse" checked />:
+                                    <input type="checkbox" className="form-check-input" id="check15" name="cuisines" value="Steakhouse" />}
                                     <label className="form-check-label" htmlFor="check15">Steakhouse</label>
                                 </div>
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check16" name="cuisines" value="Vegetarian/Vegan" />
+                                    { cuisinesChecked.includes("Vegetarian/Vegan") ?
+                                    <input type="checkbox" className="form-check-input" id="check16" name="cuisines" value="Vegetarian/Vegan" checked />:
+                                    <input type="checkbox" className="form-check-input" id="check16" name="cuisines" value="Vegetarian/Vegan" />}
                                     <label className="form-check-label" htmlFor="check16">Vegetarian/Vegan</label>
                                 </div>
                             </div>
                             <div className="row m-auto">
                                 <div className="form-check col-sm-3">
-                                    <input type="checkbox" className="form-check-input" id="check17" name="cuisines" value="Other" />
+                                    { cuisinesChecked.includes("Other") ?
+                                    <input type="checkbox" className="form-check-input" id="check17" name="cuisines" value="Other" checked />:
+                                    <input type="checkbox" className="form-check-input" id="check17" name="cuisines" value="Other" />}
                                     <label className="form-check-label" htmlFor="check17">Other</label>
                                 </div>
                             </div>

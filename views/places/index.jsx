@@ -6,7 +6,7 @@ function index(data) {
         const cuisines = place.cuisines
 
         return (
-            <div key={place.id} className="col-sm-6 p-5">
+            <div key={place.id} className="col-sm-12 col-md-6 col-lg-4 p-5">
                 <a href={`/places/${place.id}`}><h2>{place.name}</h2></a>
                 <p>
                 {cuisines.map((cuisine, index) => {
@@ -24,9 +24,9 @@ function index(data) {
     return (
         <Def>
             <main>
-                <div className='position-relative'>
-                    <h1>Places to Rant or Rave About</h1>
-                    <a className='position-absolute create-button' href='/places/new'><button className='btn btn-warning'>Create New Place</button></a>
+                <div className='flex row align-items-center indexHead p-3'>
+                    <h1 className='inline-block col-sm-12 col-md-8'>Places to Rant or Rave About</h1>
+                    <a className='col-sm-12 col-md-4 text-end' href='/places/new'><button className='btn btn-warning'>Create New Place</button></a>
                 </div>
                 <div className='container'>
                     <div className='row'>

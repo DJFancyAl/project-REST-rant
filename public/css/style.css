@@ -109,10 +109,9 @@ footer, main::after{
     color: var(--red);
 }
 
-.create-button {
-    right: 1rem;
-    top:50%;
-    transform: translate(0, -50%);
+.indexHead {
+    background-color: var(--red);
+    color: var(--yellow);
 }
 
 .btn-danger {

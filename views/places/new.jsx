@@ -6,7 +6,7 @@ function new_form(){
         <Def>
             <main className='container'>
                 <h1>Add a New Place</h1>
-                <div className='col-6 m-auto'>
+                <div className='col-sm-12 col-md-10 col-lg-6 m-auto'>
                     <form method='POST' action="/places">
                         <div className='form-group mb-3'>
                             <label htmlFor="name">Name of Place</label>

@@ -77,6 +77,13 @@ function new_form(){
                                 <option value="WY">Wyoming</option>
                             </select>
                         </div>
+
+                        <div className="form-group mb-3">
+                            <label className='form-label' htmlFor="founded">Founded Year</label>
+                            <input className="form-control" id="founded" name="founded" />
+                        </div>
+
+
                         <label className='form-label' htmlFor="cuisines">Types of Cuisine</label> 
                         <fieldset className='mb-3'>
                             <div className="row m-auto">

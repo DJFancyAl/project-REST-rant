@@ -1,20 +1,32 @@
 const router = require('express').Router()
-const places = require('../models/places')
+const db = require('../models')
+// const places = require('../models/places')
 
 // Places index page
-router.get('/', (req, res) => {      
-    res.send('GET /places stub')
+router.get('/', (req, res) => {    
+    db.Place.find()
+    .then((places) => {
+        res.render('places/index', {places})
+    })
+    .catch(err => {
+        res.status(404).render('error404')
+    })  
 })
 
 // Create new place
-router.post('/', (req, res) => { 
-    res.send('POST /places stub')
+router.post('/', (req, res) => {
+    db.Place.create(req.body)
+    .then(res.redirect('/places'))
+    .catch(err => {
+        res.status(404).render('error404')
+        console.log(err)
+    })
 })
 
 
 // Form page for creating a new place
 router.get('/new', (req, res) => {
-    res.send('GET /places/new stub')
+    res.render('places/new')
 })
 
 

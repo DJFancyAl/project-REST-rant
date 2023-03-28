@@ -32,7 +32,13 @@ router.get('/new', (req, res) => {
 
 // Details about a particular place
 router.get('/:id', (req, res) => {
-    res.send('GET /places/id stub')
+    db.Place.findById(req.params.id)
+    .then(place => {
+        res.render('places/show', { place })
+    })
+    .catch(err => {
+        res.status(404).render('error404')
+    })
 })
 
 

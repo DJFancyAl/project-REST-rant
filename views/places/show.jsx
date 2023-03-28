@@ -1,7 +1,7 @@
 const React = require('react')
 const Def = require('../layouts/default')
 
-function show({place, id}){
+function show({place}){
     return (
         <Def>
             <main className='container'>
@@ -24,11 +24,11 @@ function show({place, id}){
                         })}
                         </p>
 
-                        <form method="POST" action={`/places/${id}?_method=DELETE`}>
+                        <form method="POST" action={`/places/${place.id}?_method=DELETE`}>
                             <button type="submit" className="btn btn-danger">Delete</button>
                         </form>
 
-                        <a href={`/places/${id}/edit`}><button className='btn btn-warning inline-block mt-3'>Edit Place</button></a>
+                        <a href={`/places/${place.id}/edit`}><button className='btn btn-warning inline-block mt-3'>Edit Place</button></a>
                     </div>
                 </div>
                 <div className='col-6 m-auto mt-5 text-center'>

@@ -2,12 +2,12 @@ const React = require('react')
 const Def = require('../layouts/default.jsx')
 
 function index(data) {
-    let placesFormatted = data.places.map((place, index) => {
+    let placesFormatted = data.places.map((place) => {
         const cuisines = place.cuisines
 
         return (
-            <div key={index} className="col-sm-6 p-5">
-                <a href={`/places/${index}`}><h2>{place.name}</h2></a>
+            <div key={place.id} className="col-sm-6 p-5">
+                <a href={`/places/${place.id}`}><h2>{place.name}</h2></a>
                 <p>
                 {cuisines.map((cuisine, index) => {
                     return(

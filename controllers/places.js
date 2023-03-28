@@ -3,96 +3,40 @@ const places = require('../models/places')
 
 // Places index page
 router.get('/', (req, res) => {      
-    res.render('places/index', { places })
+    res.send('GET /places stub')
 })
 
 // Create new place
 router.post('/', (req, res) => { 
-    if(!req.body.pic){
-        req.body.pic = "http://placekitten.com/400/400"
-    }
-    if(!req.body.city){
-        req.body.city = "Anytown"
-    }
-    if(!req.body.state){
-        req.body.state = "USA"
-    }
-    if(!req.body.cuisines){
-        req.body.cuisines = ["Unknown"]
-    }
-    places.push(req.body)
-    res.redirect('/places')
+    res.send('POST /places stub')
 })
 
 
 // Form page for creating a new place
 router.get('/new', (req, res) => {
-    res.render('places/new')
+    res.send('GET /places/new stub')
 })
 
 
 // Details about a particular place
 router.get('/:id', (req, res) => {
-    let id = Number(req.params.id)
-    if (isNaN(id)) {
-        res.render('error404')
-    } else {
-        res.render('places/show', {place: places[id], id})
-    }
+    res.send('GET /places/id stub')
 })
 
 
 // Update a particular place
 router.put('/:id', (req, res) => {
-    let id = Number(req.params.id)
-    if (isNaN(id)) {
-        res.render('error404')
-    }
-    else if (!places[id]) {
-        res.render('error404')
-    }
-    else {
-        if (!req.body.pic) {
-            req.body.pic = 'http://placekitten.com/400/400'
-        }
-        if (!req.body.city) {
-            req.body.city = 'Anytown'
-        }
-        if (!req.body.state) {
-            req.body.state = 'USA'
-        }
-        places[id] = req.body
-        res.redirect(`/places/${id}`)
-    }
+    res.send('PUT /places/id stub')
 })
 
 // Form page for editing an existing place
 router.get('/:id/edit', (req, res) => {
-    let id = Number(req.params.id)
-    if (isNaN(id)) {
-        res.render('error404')
-    }
-    else if (!places[id]) {
-        res.render('error404')
-    }
-    else {
-        res.render('places/edit', {place: places[id], id: id})
-    }
+    res.send('GET /places/id/edit stub')
 })
 
 // Delete a particular place
 router.delete('/:id', (req, res) => {
-    let id = Number(req.params.id)
-    if (isNaN(id)) {
-      res.render('error404')
-    }
-    else if (!places[id]) {
-      res.render('error404')
-    }
-    else {
-      places.splice(id, 1)
-      res.redirect('/places')
-    }
+    res.send('DELETE /places/id stub')
 })
   
 

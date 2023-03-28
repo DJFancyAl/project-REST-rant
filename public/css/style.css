@@ -18,11 +18,11 @@ a {
 
 
 header {
-    height: 60px;
+    height: 56px;
 }
 
 main {
-    min-height: calc(100% - 60px);
+    min-height: calc(100% - 56px);
     margin-bottom: -60px;
 }
 

@@ -24,8 +24,8 @@ function index(data) {
     return (
         <Def>
             <main>
-                <div className='align-items-center indexHead p-3'>
-                    <div className='row'>
+                <div className='indexHead p-3'>
+                    <div className='row align-items-center'>
                         <h1 className='inline-block col-sm-12 col-md-8'>Places to Rant or Rave About</h1>
                         <a className='col-sm-12 col-md-4 text-end' href='/places/new'><button className='btn btn-warning'>Create New Place</button></a>
                     </div>

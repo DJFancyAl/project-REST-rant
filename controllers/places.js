@@ -16,7 +16,9 @@ router.get('/', (req, res) => {
 // Create new place
 router.post('/', (req, res) => {
     db.Place.create(req.body)
-    .then(res.redirect('/places'))
+    .then(() => {
+        res.redirect('/places')
+    })
     .catch(err => {
         res.status(404).render('error404')
         console.log(err)

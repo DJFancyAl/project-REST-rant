@@ -80,7 +80,7 @@ function new_form(){
 
                         <div className="form-group mb-3">
                             <label className='form-label' htmlFor="founded">Founded Year</label>
-                            <input className="form-control" id="founded" name="founded" />
+                            <input className="form-control" id="founded" name="founded" type='number' defaultValue={new Date().getFullYear()} />
                         </div>
 
 

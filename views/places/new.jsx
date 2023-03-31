@@ -20,19 +20,19 @@ function new_form(data){
                     <form method='POST' action="/places">
                         <div className='form-group mb-3'>
                             <label htmlFor="name">Name of Place</label>
-                            <input className='form-control' type="text" placeholder='The place...' name='name' required />
+                            <input className='form-control' type="text" placeholder='The place...' defaultValue={data.body ? data.body.name: ''} name='name' required />
                         </div>
                         <div className='form-group mb-3'>
                             <label htmlFor="pic">Picture of Place</label>
-                            <input className='form-control' type="url" id="pic" name="pic" />
+                            <input className='form-control' type="url" id="pic" name="pic" defaultValue={data.body ? data.body.pic: ''} />
                         </div>
                         <div className='form-group mb-3'>
                             <label htmlFor="city">City</label>
-                            <input className='form-control' type="text" placeholder='City Name...' name='city' />
+                            <input className='form-control' type="text" placeholder='City Name...' name='city' defaultValue={data.body ? data.body.city: ''} />
                         </div>
                         <div className='form-group mb-1'>
                             <label htmlFor="state">State</label>
-                            <select className='form-control' name="state" id="state">
+                            <select className='form-control' name="state" id="state" defaultValue={data.body ? data.body.state: ''}>
                                 <option value="" disabled selected>--State--</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -90,7 +90,7 @@ function new_form(data){
 
                         <div className="form-group mb-3">
                             <label className='form-label' htmlFor="founded">Founded Year</label>
-                            <input className="form-control" id="founded" name="founded" type='number' defaultValue={new Date().getFullYear()} />
+                            <input className="form-control" id="founded" name="founded" type='number' defaultValue={data.body ? data.body.founded : new Date().getFullYear()} />
                         </div>
 
 

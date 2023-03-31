@@ -29,7 +29,7 @@ function index(data) {
                     <a className='col-sm-12 col-md-4 text-end' href='/places/new'><button className='btn btn-warning'>Create New Place</button></a>
                 </div>
                 <div className='container'>
-                    <div className='row'>
+                    <div className='row justify-content-around'>
                         {placesFormatted}
                     </div>
                 </div>

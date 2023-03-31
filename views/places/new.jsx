@@ -1,12 +1,22 @@
 const React = require('react')
 const Def = require('../layouts/default')
 
-function new_form(){
+function new_form(data){
+    let message = ''
+    if (data.message) {
+        message = (
+            <h4 className="alert alert-danger">
+                {data.message}
+            </h4>
+        )
+    }
+
     return (
         <Def>
             <main className='container'>
                 <h1>Add a New Place</h1>
                 <div className='col-sm-12 col-md-10 col-lg-6 m-auto'>
+                    {message}
                     <form method='POST' action="/places">
                         <div className='form-group mb-3'>
                             <label htmlFor="name">Name of Place</label>

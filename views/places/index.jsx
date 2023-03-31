@@ -15,7 +15,7 @@ function index(data) {
                     )
                 })}
                 </p>
-                <img className='img-fluid text-center w-100' src={place.pic} alt={place.name} />
+                <a href={`/places/${place.id}`}><img className='img-fluid text-center w-100' src={place.pic} alt={place.name} /></a>
                 <h5 className='mt-2'>Located in {place.city}, {place.state}</h5>
             </div>
         )

@@ -51,6 +51,10 @@ a h2:hover {
     text-decoration: underline;
 }
 
+a img:hover {
+    opacity: 0.7;
+}
+
 footer, main::after{
     height: 60px;
 }

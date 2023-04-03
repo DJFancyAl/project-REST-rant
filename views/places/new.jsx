@@ -1,28 +1,38 @@
 const React = require('react')
 const Def = require('../layouts/default')
 
-function new_form(){
+function new_form(data){
+    let message = ''
+    if (data.message) {
+        message = (
+            <h4 className="alert alert-danger">
+                {data.message}
+            </h4>
+        )
+    }
+
     return (
         <Def>
             <main className='container'>
                 <h1>Add a New Place</h1>
                 <div className='col-sm-12 col-md-10 col-lg-6 m-auto'>
+                    {message}
                     <form method='POST' action="/places">
                         <div className='form-group mb-3'>
                             <label htmlFor="name">Name of Place</label>
-                            <input className='form-control' type="text" placeholder='The place...' name='name' required />
+                            <input className='form-control' type="text" placeholder='The place...' defaultValue={data.body ? data.body.name: ''} name='name' required />
                         </div>
                         <div className='form-group mb-3'>
                             <label htmlFor="pic">Picture of Place</label>
-                            <input className='form-control' type="url" id="pic" name="pic" />
+                            <input className='form-control' type="url" id="pic" name="pic" defaultValue={data.body ? data.body.pic: ''} />
                         </div>
                         <div className='form-group mb-3'>
                             <label htmlFor="city">City</label>
-                            <input className='form-control' type="text" placeholder='City Name...' name='city' />
+                            <input className='form-control' type="text" placeholder='City Name...' name='city' defaultValue={data.body ? data.body.city: ''} />
                         </div>
                         <div className='form-group mb-1'>
                             <label htmlFor="state">State</label>
-                            <select className='form-control' name="state" id="state">
+                            <select className='form-control' name="state" id="state" defaultValue={data.body ? data.body.state: ''}>
                                 <option value="" disabled selected>--State--</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -80,7 +90,7 @@ function new_form(){
 
                         <div className="form-group mb-3">
                             <label className='form-label' htmlFor="founded">Founded Year</label>
-                            <input className="form-control" id="founded" name="founded" />
+                            <input className="form-control" id="founded" name="founded" type='number' defaultValue={data.body ? data.body.founded : new Date().getFullYear()} />
                         </div>
 
 

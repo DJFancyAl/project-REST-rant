@@ -2,7 +2,7 @@ const React = require('react')
 const Def = require('../layouts/default')
 
 function show({place}){
-    let comments = (<h3 className='inactive'>No comments yet!</h3>)
+    let comments = (<h3 className='inactive mb-5'>No comments yet!</h3>)
 
     if (place.comments.length) {
         comments = place.comments.map(c => {
@@ -52,6 +52,34 @@ function show({place}){
                 <div className='col-6 m-auto mt-5 text-center'>
                     <h2 className='mb-3'>Comments</h2>
                     {comments}
+
+                    <div className="comment border-5 mb-3 pb-2">
+                        <h3 className="rant p-2 mb-3">Create a New Comment:</h3>
+                        <form className='mx-3' method='POST' action={`/places/${place.id}/comment`}>
+                            <div className='form-group mb-3'>
+                                <label htmlFor="author">Your Name</label>
+                                <input className='form-control' type="text" placeholder='Name here...' name='author' />
+                            </div>
+                            <div className='form-group mb-3'>
+                                <label htmlFor="content">Comment</label>
+                                <textarea className='form-control' id='content' name='content' placeholder="Here's your chance! Give us your rant or rave..." rows='3' />
+                            </div>
+                            <div className='d-flex justify-content-center align-items-center mb-3'>
+                                <div className='form-group p-3'>
+                                    <label htmlFor="stars">Stars (1-5)</label>
+                                    <input className='form-control m-auto' type="number" min='1' max='5' step='0.5' defaultValue='3' name='stars' required />
+                                </div>
+                                <div className='form-group3 p-3'>
+                                    <label htmlFor="stars">Is this a Rant?</label><br />
+                                    <div className="form-check d-inline-block m-auto text-start">
+                                        <input type="checkbox" className="form-check-input" id="rant" name="rant" value="true" />
+                                        <label className="form-check-label" htmlFor="rant">Yes</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <input className='btn btn-danger mb-3' type="submit" value="Add Comment" />
+                        </form>
+                    </div>
                 </div>
             </main>
         </Def>

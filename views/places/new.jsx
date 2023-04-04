@@ -93,7 +93,6 @@ function new_form(data){
                             <input className="form-control" id="founded" name="founded" type='number' defaultValue={data.body ? data.body.founded : new Date().getFullYear()} />
                         </div>
 
-
                         <label className='form-label' htmlFor="cuisines">Types of Cuisine</label> 
                         <fieldset className='mb-3'>
                             <div className="row m-auto">

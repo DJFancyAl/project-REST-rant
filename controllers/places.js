@@ -71,12 +71,13 @@ router.delete('/:id', (req, res) => {
   
 
 // Create a rant (comment) about a particular place
-router.post('/:id/rant', (req, res) => {      
-    res.send("Create a rant (comment) about a particular place")
+router.post('/:id/comment', (req, res) => {
+    console.log(req.body)
+    res.redirect(`/places/${req.params.id}`)
 })
 
 // Delete a rant (comment) about a particular place
-router.delete('/:id/rant/:id', (req, res) => {      
+router.delete('/:id/comment/:id', (req, res) => {      
     res.send("Delete a rant (comment) about a particular place")
 })
 

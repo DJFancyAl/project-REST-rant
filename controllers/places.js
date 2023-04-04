@@ -72,8 +72,21 @@ router.delete('/:id', (req, res) => {
 
 // Create a rant (comment) about a particular place
 router.post('/:id/comment', (req, res) => {
-    console.log(req.body)
-    res.redirect(`/places/${req.params.id}`)
+    req.body.rant = req.body.rant ? true : false
+    db.Place.findById(req.params.id)
+    .then(place => {
+        db.Comment.create(req.body)
+        .then(comment => {
+            place.comments.push(comment.id)
+            place.save()
+            .then(() => {
+                res.redirect(`/places/${req.params.id}`)
+            })
+        })
+    })
+    .catch(err => {
+        res.status(404).render('error404')
+    })
 })
 
 // Delete a rant (comment) about a particular place

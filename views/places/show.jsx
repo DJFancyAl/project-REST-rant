@@ -66,11 +66,11 @@ function show({place}){
                             </div>
                             <div className='d-flex justify-content-center align-items-center mb-3'>
                                 <div className='form-group p-3'>
-                                    <label htmlFor="stars">Stars (1-5)</label>
-                                    <input className='form-control m-auto' type="number" min='1' max='5' step='0.5' defaultValue='3' name='stars' required />
+                                    <label htmlFor="stars" className="form-label">Stars (1-5)</label>
+                                    <input type="range" className="form-range" id="stars" name="stars" min="1" max="5" step="0.5" required></input>
                                 </div>
                                 <div className='form-group3 p-3'>
-                                    <label htmlFor="stars">Is this a Rant?</label><br />
+                                    <label htmlFor="stars" className="form-label">Is this a Rant?</label><br />
                                     <div className="form-check d-inline-block m-auto text-start">
                                         <input type="checkbox" className="form-check-input" id="rant" name="rant" value="true" />
                                         <label className="form-check-label" htmlFor="rant">Yes</label>

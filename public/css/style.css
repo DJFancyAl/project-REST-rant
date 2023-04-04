@@ -55,6 +55,17 @@ a img:hover {
     opacity: 0.7;
 }
 
+.comment {
+    background-color: var(--yellow);
+    border-style: solid;
+    border-color: var(--red);
+}
+
+.rant {
+    background-color: var(--red);
+    color: var(--white);
+}
+
 footer, main::after{
     height: 60px;
 }

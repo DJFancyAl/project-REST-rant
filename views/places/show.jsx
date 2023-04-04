@@ -2,6 +2,23 @@ const React = require('react')
 const Def = require('../layouts/default')
 
 function show({place}){
+    let comments = (<h3 className='inactive'>No comments yet!</h3>)
+
+    if (place.comments.length) {
+        comments = place.comments.map(c => {
+          return (
+            <div className="comment border-5 mb-3 pb-2" key={c.id}>
+              <h3 className="rant p-2 mb-3">{c.rant ? 'Rant! 🤬' : 'Rave! 😁'}</h3>
+              <h5>{c.content}</h5>
+              <h4>
+                <stong>~ {c.author}</stong>
+              </h4>
+              <h5 className='rant p-3 rounded-pill d-inline-block'>Rating: {c.stars}</h5>
+            </div>
+          )
+        })
+      }
+
     return (
         <Def>
             <main className='container'>
@@ -33,8 +50,8 @@ function show({place}){
                     </div>
                 </div>
                 <div className='col-6 m-auto mt-5 text-center'>
-                    <h2>Comments</h2>
-                    <p>There's not any comments yet...</p>
+                    <h2 className='mb-3'>Comments</h2>
+                    {comments}
                 </div>
             </main>
         </Def>

@@ -56,17 +56,36 @@ router.get('/:id', (req, res) => {
 
 // Update a particular place
 router.put('/:id', (req, res) => {
-    res.send('PUT /places/id stub')
+    db.Place.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => {
+        res.redirect(`/places/${req.params.id}`)
+    })
+    .catch(err => {
+        res.status(404).render('error404')
+    })
 })
 
 // Form page for editing an existing place
 router.get('/:id/edit', (req, res) => {
-    res.send('GET /places/id/edit stub')
+    db.Place.findById(req.params.id)
+    .then(place => {
+        res.render('places/edit', { place })
+    })
+    .catch (err => {
+        res.status(404).render('error404')
+    })
 })
 
 // Delete a particular place
 router.delete('/:id', (req, res) => {
-    res.send('DELETE /places/id stub')
+    db.Place.findByIdAndDelete(req.params.id)
+    .then(place => {
+        res.redirect('/places')
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.status(404).render('error404')
+    })
 })
   
 
@@ -90,8 +109,14 @@ router.post('/:id/comment', (req, res) => {
 })
 
 // Delete a rant (comment) about a particular place
-router.delete('/:id/comment/:id', (req, res) => {      
-    res.send("Delete a rant (comment) about a particular place")
+router.delete('/:id/comment/:cid', (req, res) => {
+    db.Comment.findByIdAndDelete(req.params.cid)
+    .then(() => {
+        res.redirect(`/places/${req.params.id}`)
+    })
+    .catch(err => {
+        res.status(404).render('error404')
+    })
 })
 
 // Wildcard Route

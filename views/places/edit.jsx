@@ -1,7 +1,7 @@
 const React = require('react')
 const Def = require('../layouts/default')
 
-function edit_form( {place, id} ){
+function edit_form( {place} ){
     let cuisinesChecked = place.cuisines
 
     return (
@@ -9,7 +9,7 @@ function edit_form( {place, id} ){
             <main className="container">
                 <h1>Edit Place</h1>
                 <div className='col-6 m-auto'>
-                    <form method='POST' action={`/places/${id}?_method=PUT`}>
+                    <form method='POST' action={`/places/${place.id}?_method=PUT`}>
                         <div className='form-group mb-3'>
                             <label htmlFor="name">Name of Place</label>
                             <input className='form-control' type="text" placeholder='The place...' name='name' defaultValue={place.name} required />
@@ -79,6 +79,12 @@ function edit_form( {place, id} ){
                                 <option value="WY">Wyoming</option>
                             </select>
                         </div>
+
+                        <div className="form-group mb-3">
+                            <label className='form-label' htmlFor="founded">Founded Year</label>
+                            <input className="form-control" id="founded" name="founded" type='number' defaultValue={place.founded} />
+                        </div>
+                        
                         <label className='form-label' htmlFor="cuisines">Types of Cuisine</label> 
                         <fieldset className='mb-3'>
                             <div className="row m-auto">

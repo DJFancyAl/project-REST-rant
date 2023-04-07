@@ -10,9 +10,13 @@ function show({place}){
         let sumRatings = place.comments.reduce((tot, c) => {
             return tot + c.stars
         }, 0)
-        let averageRating = sumRatings/place.comments.length
+        let averageRating = Math.round(sumRatings/place.comments.length)
+        let stars= ''
+        for (let i=0; i < averageRating; i++) {
+            stars += '⭐'
+        }
         rating = (
-            <h3>{Math.round(averageRating)} stars</h3>
+            <h3>{stars} stars</h3>
         )
     }
 
@@ -26,6 +30,9 @@ function show({place}){
                 <stong>~ {c.author}</stong>
               </h4>
               <h5 className='rant p-3 rounded-pill d-inline-block'>Rating: {c.stars}</h5>
+              <form method="POST" action={`/places/${place.id}/comment/${c.id}?_method=DELETE`}>
+                <input type="submit" className="btn btn-danger" value="Delete Comment" />
+              </form>
             </div>
           )
         })

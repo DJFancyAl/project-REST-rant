@@ -3,6 +3,18 @@ const Def = require('../layouts/default')
 
 function show({place}){
     let comments = (<h3 className='inactive mb-5'>No comments yet!</h3>)
+    
+    let rating = (<h3 className='inactive mb-5'>Not yet rated.</h3>)
+
+    if (place.comments.length){
+        let sumRatings = place.comments.reduce((tot, c) => {
+            return tot + c.stars
+        }, 0)
+        let averageRating = sumRatings/place.comments.length
+        rating = (
+            <h3>{Math.round(averageRating)} stars</h3>
+        )
+    }
 
     if (place.comments.length) {
         comments = place.comments.map(c => {
@@ -30,7 +42,7 @@ function show({place}){
                     </div>
                     <div className='col-sm-12 col-md-6 align-self-center text-center py-4'>
                         <h2>Rating</h2>
-                        <p>Not yet rated...</p>
+                        {rating}
                         <h2 className='mt-5'>Description</h2>
                         <h3 className='mb-3 px-5'>{place.showEstablished()}</h3>
 
